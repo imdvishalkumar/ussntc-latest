@@ -1,70 +1,105 @@
 <template>
     <div class="policy-page">
         <div class="container py-5">
-            <h1 class="page-title mb-4">Refund Policy</h1>
+            <h1 class="page-title mb-4">Refund Policy – Vortex Legacy Group</h1>
             
             <div class="policy-content">
                 <section class="mb-4">
-                    <h2>Refund & Return Policy</h2>
+                    <p><strong>Company: Vortex Legacy Group ("Vortex," "we," "us," or "our")</strong></p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>1. Overview – Custom & Engraved Items</h2>
                     <p>
-                        At Bricks R Us, each engraved brick is custom-made according to the information provided by the customer. Because our products are personalized, we cannot offer refunds or accept returns once production has begun, except in cases where the error is ours.
+                        All products sold by Vortex Legacy Group are custom-made and/or engraved to order. Because these items are personalized specifically for each customer, all sales are final, subject only to the limited shipping-damage exception described below.
                     </p>
                 </section>
 
                 <section class="mb-4">
-                    <h2>Order Accuracy</h2>
-                    <p>Please review your order carefully before submitting it.</p>
-                    <ul>
-                        <li>Bricks are engraved exactly as the information is entered.</li>
-                        <li>Bricks R Us is not responsible for errors (including spelling, punctuation, capitalization, or design choices) submitted by the customer.</li>
-                    </ul>
-                </section>
-
-                <section class="mb-4">
-                    <h2>Refunds & Replacements</h2>
-                    <ul>
-                        <li>If we make an engraving error, we will remake the brick at no cost to you.</li>
-                        <li>If the error is due to the customer's submission, a remake can be ordered at the regular price.</li>
-                        <li>Refunds are not issued once production has started, unless we are unable to fulfill your order.</li>
-                    </ul>
-                </section>
-
-                <section class="mb-4">
-                    <h2>Damaged or Defective Products</h2>
+                    <h2>2. All Sales Final – No Returns or Refunds</h2>
                     <p>
-                        If your brick arrives damaged or defective (not related to engraving), please notify us within 7 days of delivery. We will replace the product at no charge.
+                        We do not accept returns, refunds, or exchanges for any reason, including buyer’s remorse or ordering errors since all of our products have custom engraving.
                     </p>
                 </section>
 
                 <section class="mb-4">
-                    <h2>Cancellations</h2>
+                    <h2>2A. Order Approval, Production, and No Changes</h2>
                     <p>
-                        Cancellations must be made within 24 hours of placing the order to be eligible for a full refund. After that time, production may have already begun, and refunds will not be available.
+                        After 24 hours of placing your order, it will be submitted for approval and scheduled for production. Once an order has been approved and scheduled for production, changes, cancellations, and refunds are not possible.
                     </p>
                 </section>
 
                 <section class="mb-4">
-                    <h2>Quick Refund Policy</h2>
-                    <ul>
-                        <li>All bricks are custom engraved, so we can't issue refunds once production has started. Please double-check spelling, punctuation, and capitalization before submitting your order.</li>
-                        <li>If we make an engraving error, we'll replace your brick at no cost.</li>
-                        <li>If the error is in the information provided, a new brick can be ordered at the standard price.</li>
-                        <li>Cancellations are only accepted within 24 hours of placing the order.</li>
-                        <li>If your brick arrives damaged or defective, contact us within 7 days for a free replacement.</li>
-                    </ul>
+                    <h2>2B. Custom Engraving – No Refunds After Engraving</h2>
+                    <p>
+                        Due to custom engraving, once an item has been engraved, it is not refundable under any circumstances.
+                    </p>
                 </section>
 
                 <section class="mb-4">
-                    <h2>Contact Us</h2>
-                    <p>For any concerns regarding your order, please contact us at:</p>
+                    <h2>3. Customer Responsibility for Personalization</h2>
+                    <p>
+                        Customers are solely responsible for reviewing and confirming all personalization details submitted at checkout. Errors provided by the customer are not eligible for replacement or refund.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>4. Limited Exception – Items Arriving Broken or Damaged</h2>
+                    <p>
+                        If an item is received broken or damaged due to shipping, Vortex Legacy Group must be notified within seven (7) days of delivery. Notification must include clear photographic documentation of the damaged item and the original packaging. Claims submitted without photos or after the 7-day period will not be eligible for replacement or refund.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>5. What Is Not Considered Damage</h2>
+                    <p>
+                        Minor variations, natural material characteristics, wear and tear, damage after delivery, improper handling, installation, or dissatisfaction do not qualify as damage.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>6. Shipping Issues & Delivered Packages</h2>
+                    <p>
+                        Packages marked as delivered by the carrier are considered delivered. Vortex Legacy Group is not responsible for stolen or missing packages after confirmed delivery.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>7. Limitation of Remedies</h2>
+                    <p>
+                        To the maximum extent permitted under Idaho law, the exclusive remedy for any valid claim is replacement of the item or, if replacement is not feasible, refund of the purchase price.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>8. Idaho Consumer Protection Compliance</h2>
+                    <p>
+                        Nothing in this policy waives rights that cannot be waived under the Idaho Consumer Protection Act.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>9. Governing Law & Venue</h2>
+                    <p>
+                        This policy is governed by the laws of the State of Idaho. Venue shall be in Ada County, Idaho or the United States District Court for the District of Idaho, as applicable.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>10. Contact Information</h2>
+                    <p>Email: <a href="mailto:support@vortexlegacygroup.com">support@vortexlegacygroup.com</a></p>
                     <p v-if="contactInfo.phone_number" class="contact-info">
                         <strong>{{ contactInfo.phone_number }}</strong>
                     </p>
-                    <p v-if="contactInfo.email_address">
-                        {{ contactInfo.email_address }}
-                    </p>
                     <p>
                         Or visit our <router-link to="/contact">Contact Page</router-link>.
+                    </p>
+                </section>
+
+                <section class="mb-4">
+                    <h2>11. Policy Updates</h2>
+                    <p>
+                        This policy may be updated at any time and applies to future purchases only.
                     </p>
                 </section>
             </div>
