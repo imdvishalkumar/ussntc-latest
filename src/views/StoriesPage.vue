@@ -75,10 +75,17 @@
                 <div class="row">
                     <div class="col-md-4 col-12 p-3" v-for="(story, index) in storiesData.stories_data" :key="index">
                         <h3 class="sub-header-font">{{ story.stories_lable }}</h3>
-                        <img v-if="story.stories_image" :src="story.stories_image" class="img-fluid mt-2 w-100"
-                            style="height: 250px;" />
+                        <img v-if="story.stories_image" :src="story.stories_image" class="img-fluid mt-2 clickable-img" @click="openModal(story.stories_image)" />
                         <p class="pt-3 text-break" v-html="story.stories_descriptions"></p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Image Modal -->
+            <div v-if="isModalOpen" class="modal-overlay" @click="closeModal">
+                <div class="modal-content" @click.stop>
+                    <span class="close-icon" @click="closeModal">&times;</span>
+                    <img :src="modalImageSrc" class="modal-image" />
                 </div>
             </div>
         </div>
@@ -113,6 +120,19 @@ export default {
         const isError = ref(false);
         const visible = ref(false);
         const errors = ref({});
+
+        const isModalOpen = ref(false);
+        const modalImageSrc = ref('');
+
+        function openModal(src) {
+            modalImageSrc.value = src;
+            isModalOpen.value = true;
+        }
+
+        function closeModal() {
+            isModalOpen.value = false;
+            modalImageSrc.value = '';
+        }
 
         onMounted(() => {
             setButtonStyles(themeData.value?.general_information);
@@ -283,6 +303,10 @@ export default {
             isError,
             visible,
             errors,
+            isModalOpen,
+            modalImageSrc,
+            openModal,
+            closeModal,
             openFileDialog,
             handleFileUpload,
             clearError,
@@ -313,6 +337,65 @@ textarea:focus {
 
 img {
     box-shadow: 0 0 18px rgba(0, 0, 0, 0.25);
+}
+
+.clickable-img {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.clickable-img:hover {
+    transform: scale(1.02);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-icon {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    font-size: 50px;
+    font-weight: 300;
+    color: white;
+    cursor: pointer;
+    z-index: 1060;
+    line-height: 1;
+    transition: color 0.2s ease-in-out;
+}
+
+.close-icon:hover {
+    color: #ccc;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 992px) {
